@@ -7,14 +7,16 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 const Home = () => {
   const customerFeedbackSliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 900,
     slidesToShow: 3,
     slidesToScroll: 1,
+    swipeToSlide: true,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -22,7 +24,6 @@ const Home = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
           speed: 1000,
         },
       },
@@ -32,7 +33,6 @@ const Home = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
           speed: 800,
         },
       },
@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <main className=" flex flex-col items-center justify-center px-6">
       {/*Hero Section*/}
-      <section className="flex flex-col md:min-h-[90vh] md:flex-row items-center justify-between w-full max-w-5xl mb-8">
+      <section className="flex flex-col md:min-h-[90vh] md:flex-row items-center justify-between w-full max-w-5xl mb-8 py-8">
         {/*Left Side Section */}
         <div className="md:w-1/2 w-full text-left px-2 md:px-4">
           <h1 className="text-3xl font-semibold mb-4">
@@ -156,7 +156,7 @@ const Home = () => {
       </section>
       {/*User Feedback */}
       <section className="w-full max-w-5xl md:min-h-[60vh] mb-8">
-        <h1 className="text-2xl font-semibold mb-8  md:text-center">
+        <h1 className="text-2xl font-semibold md:text-center">
           What Our Customers Say
         </h1>
         {/*Make an API call to get feedback from customers */}

@@ -1,7 +1,7 @@
 const CustomerFeedBackCard = (props) => {
-    const {id} = props
+  const { id } = props;
   return (
-    <li className="w-[90%] md:w-[300px] flex flex-col items-center p-4  shadow-md rounded-lg list-none">
+    <li className="w-[90%] md:w-[300px] flex flex-col items-center p-4 my-4 shadow-lg rounded-lg list-none">
       <div className="h-8 w-8 rounded-full bg-gray-300 mb-4"></div>
       <p className="text-[16px] font-semibold mb-4">
         "
@@ -11,7 +11,9 @@ const CustomerFeedBackCard = (props) => {
         "
       </p>
 
-      <h3 className="self-end text-sm text-gray-500">-{id} {"Name"}</h3>
+      <h3 className="self-end text-sm text-gray-500">
+        -{id} {"Name"}
+      </h3>
     </li>
   );
 };
