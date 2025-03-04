@@ -18,7 +18,7 @@ npm run build
 
 1. Clone the repository
 2. Install dependencies using `npm install`
-3. Start the server with `npm start`
+3. Start the server with `npm run dev`
 
 ## Change Directory
 
