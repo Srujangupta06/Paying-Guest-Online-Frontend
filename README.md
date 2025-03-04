@@ -20,16 +20,7 @@ npm run build
 2. Install dependencies using `npm install`
 3. Start the server with `npm start`
 
-## Change Directory
 
-Navigate to the frontend directory:
-
-```sh
-cd frontend
-cd my-app
-```
-
-Then start working.
 
 ## Tech Stack (MERN Stack)
 
