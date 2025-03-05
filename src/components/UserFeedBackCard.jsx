@@ -1,7 +1,7 @@
 const UserFeedBackCard = (props) => {
   const { id } = props;
   return (
-    <li className="w-[90%] md:w-[380px] flex flex-col items-center p-6 my-4 shadow-xl rounded-xl border border-gray-200 bg-white/40 ">
+    <li className="w-[90%] md:w-[380px] flex flex-col items-center p-6 my-4 shadow-xl  mx-auto rounded-xl border border-gray-200 bg-white/40 ">
       {/* Quote Icon */}
       <div className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-300 text-white text-lg font-bold mb-4">
         ❝
