@@ -1,44 +1,10 @@
 import { FaCheck } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import CustomerFeedBackCard from "../components/CustomerFeedBackCard";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-const Home = () => {
-  const customerFeedbackSliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 900,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-    pauseOnHover: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          speed: 1000,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          speed: 800,
-        },
-      },
-    ],
-  };
 
+import Faq from "../components/Faq";
+import UserFeedBack from "../components/UserFeedBack";
+const Home = () => {
   return (
     <main className=" flex flex-col items-center justify-center px-6">
       {/*Hero Section*/}
@@ -106,7 +72,7 @@ const Home = () => {
         </div>
       </section>
       {/*Section 3 */}
-      <section className="w-full max-w-5xl md:min-h-[60vh] mb-8 ">
+      <section className="w-full max-w-5xl md:min-h-[60vh] mb-8">
         <h1 className="text-2xl font-semibold mb-8  md:text-center">
           Discover the Essential Features for Tenants and Hostel Owners
         </h1>
@@ -155,21 +121,9 @@ const Home = () => {
         </div>
       </section>
       {/*User Feedback */}
-      <section className="w-full max-w-5xl md:min-h-[60vh] mb-8">
-        <h1 className="text-2xl font-semibold md:text-center">
-          What Our Customers Say
-        </h1>
-        {/*Make an API call to get feedback from customers */}
-        <div className="w-full overflow-hidden py-8">
-          <Slider {...customerFeedbackSliderSettings}>
-            <CustomerFeedBackCard id={1} />
-            <CustomerFeedBackCard id={2} />
-            <CustomerFeedBackCard id={3} />
-            <CustomerFeedBackCard id={4} />
-            <CustomerFeedBackCard id={5} />
-          </Slider>
-        </div>
-      </section>
+      <UserFeedBack />
+      {/*Frequently Asked Questions */}
+      <Faq />
     </main>
   );
 };
