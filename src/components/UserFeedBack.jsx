@@ -1,7 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CustomerFeedBackCard from "../components/CustomerFeedBackCard";
+import CustomerFeedBackCard from "./UserFeedBackCard";
+import UserFeedBackCard from "./UserFeedBackCard";
 
 const UserFeedBack = () => {
   const customerFeedbackSliderSettings = {
@@ -38,17 +39,17 @@ const UserFeedBack = () => {
   };
   return (
     <section className="w-full max-w-5xl mb-8 py-4">
-      <h1 className="text-2xl font-semibold md:text-center">
+      <h1 className="text-xl md:text-2xl font-semibold text-center">
         What Our Customers Say
       </h1>
       {/*Make an API call to get feedback from customers */}
       <div className="w-full overflow-hidden mt-6 md:mt-4">
         <Slider {...customerFeedbackSliderSettings}>
-          <CustomerFeedBackCard id={1} />
-          <CustomerFeedBackCard id={2} />
-          <CustomerFeedBackCard id={3} />
-          <CustomerFeedBackCard id={4} />
-          <CustomerFeedBackCard id={5} />
+          <UserFeedBackCard id={1}/>
+          <UserFeedBackCard id={2}/>
+          <UserFeedBackCard id={3}/>
+          <UserFeedBackCard id={4}/>
+          <UserFeedBackCard id={5}/>
         </Slider>
       </div>
     </section>

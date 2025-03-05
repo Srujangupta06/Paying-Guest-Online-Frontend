@@ -1,11 +1,6 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
-import { useEffect } from "react";
-
 const Footer = () => {
-  useEffect(() => {
-    document.title = "PGO Hostel";
-  }, []);
+  
 
   function showCopyright() {
     alert(
