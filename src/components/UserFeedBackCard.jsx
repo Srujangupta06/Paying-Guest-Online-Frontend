@@ -14,9 +14,6 @@ const UserFeedBackCard = (props) => {
         ornare."
       </p>
 
-      {/* Divider Line */}
-      <div className="w-1/2 h-0.5 bg-gray-300 mb-3"></div>
-
       {/* Name */}
       <h3 className="self-end text-sm font-semibold text-gray-600">
         - {id} {"Name"}

@@ -39,7 +39,7 @@ const UserFeedBack = () => {
   };
   return (
     <section className="w-full max-w-5xl mb-8 py-4">
-      <h1 className="text-xl md:text-2xl font-semibold text-center">
+      <h1 className="text-xl md:text-2xl font-semibold text-center tracking-wider leading-relaxed">
         What Our Customers Say
       </h1>
       {/*Make an API call to get feedback from customers */}

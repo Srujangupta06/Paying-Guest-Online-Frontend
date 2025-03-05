@@ -6,8 +6,8 @@ const Faq = () => {
   const [activeFaqId, setActiveFaqId] = useState("");
 
   return (
-    <section className="text-center w-full max-w-5xl md:min-h-[80vh] mb-8">
-      <h1 className="text-xl  md:text-2xl font-semibold mb-4">FAQs</h1>
+    <section className="text-center w-full max-w-5xl min-h-[80vh] md:min-h-[80vh] mb-8">
+      <h1 className="text-xl  md:text-2xl font-semibold mb-4 tracking-widest">FAQs</h1>
       <p className="mb-8 text-sm">
         Find answers to your questions about booking, payments, and our
         services.
