@@ -16,20 +16,11 @@ npm run build
 
 ## Steps to Install
 
-1. Clone the repository
+1. Clone the repository 
 2. Install dependencies using `npm install`
 3. Start the server with `npm run dev`
 
-## Change Directory
 
-Navigate to the frontend directory:
-
-```sh
-cd frontend
-cd my-app
-```
-
-Then start working.
 
 ## Tech Stack (MERN Stack)
 
