@@ -38,12 +38,12 @@ const UserFeedBack = () => {
     ],
   };
   return (
-    <section className="w-full max-w-5xl mb-8 py-4">
-      <h1 className="text-xl md:text-2xl font-semibold text-center tracking-wider leading-relaxed">
+    <section className="px-6 sm:px-0  w-full flex flex-col items-center mb-6 sm:mb-12  sm:py-0">
+      <h1 className="text-xl md:text-2xl font-semibold text-center tracking-wider leading-relaxed ">
         What Our Customers Say
       </h1>
       {/*Make an API call to get feedback from customers */}
-      <div className="w-full overflow-hidden mt-6 md:mt-4">
+      <div className="w-full overflow-hidden mt-2 md:mt-4">
         <Slider {...customerFeedbackSliderSettings}>
           <UserFeedBackCard id={1}/>
           <UserFeedBackCard id={2}/>

@@ -11,8 +11,13 @@
   display: none;
 }
 .bg-image {
-  background-image: url("https://t4.ftcdn.net/jpg/02/19/66/93/360_F_219669327_v12pBKc7TB62E3uCJrgRRkDhfVENK3z5.jpg");
-  min-height: 100vh;
+  background-image: url("https://res.cloudinary.com/djv3sgbxn/image/upload/v1741244673/home-banner-3_qlzg27.jpg");
+  min-height: 90vh;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+}
+@media screen and (max-width:767px){
+  .bg-image{
+    height: auto;
+  }
 }

@@ -3,41 +3,14 @@ import { Link } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Faq from "../components/Faq";
 import UserFeedBack from "../components/UserFeedBack";
+import HomeHero from "../components/HomeHero";
 const Home = () => {
   return (
-    <main className=" flex flex-col items-center justify-center px-6">
+    <main className="">
       {/*Hero Section*/}
-      <section className="flex flex-col sm:min-h-[40vh] md:min-h-[80vh] sm:flex-row items-center justify-between w-full max-w-5xl mb-8 py-8">
-        {/* Left Side Section */}
-        <div className="sm:w-1/2 w-full text-left px-2 sm:px-4">
-          <h1 className="text-xl md:text-2xl font-semibold mb-4 tracking-wider leading-relaxed font-poppins">
-            Find Your Perfect Stay Hassle-Free Bookings!
-          </h1>
-          <p className="mb-4 text-gray-600">
-            Book monthly or daily stays instantly with our verified hostels.
-            Enjoy secure payments and direct communication with property owners.
-          </p>
-          <div className="flex flex-wrap justify-start gap-3">
-            <button className="bg-black text-white text-sm px-5 py-2 border border-black cursor-pointer ">
-              Find Hostels
-            </button>
-            <button className="bg-white text-black text-sm px-5 py-2 border border-black  cursor-pointer">
-              List Hostel
-            </button>
-          </div>
-        </div>
-
-        {/* Right Side Section */}
-        <div className="sm:w-1/3 w-full mt-6 sm:mt-0">
-          <img
-            src="https://i.pinimg.com/736x/0e/95/4b/0e954b356f560ad83ac1d7f1b41425ec.jpg"
-            alt="A cozy and well-furnished hostel room"
-            className="w-full h-auto rounded-lg shadow-lg"
-          />
-        </div>
-      </section>
-      {/*Section 2 */}
-      <section className="flex flex-col sm:min-h-[40vh] md:min-h-[80vh] sm:flex-row items-center justify-between w-full max-w-5xl mb-8 py-8">
+      <HomeHero />
+      {/*Section 2 */} 
+      <section className="px-6 sm:px-0 flex flex-col sm:min-h-[40vh] md:min-h-[80vh] sm:flex-row items-center justify-around w-full mb-6 sm:mb-12  sm:py-0">
         {/*Left Side Section */}
         <div className="sm:w-1/3 w-full mt-6 sm:mt-0 order-2 sm:order-1">
           <img
@@ -72,11 +45,11 @@ const Home = () => {
         </div>
       </section>
       {/*Section 3 */}
-      <section className="w-full max-w-5xl md:min-h-[60vh] mb-8">
-        <h1 className="text-xl md:text-2xl font-semibold mb-8 md:text-center hidden md:block tracking-wider leading-relaxed">
+      <section className="px-6 sm:px-0 w-full flex flex-col items-center md:min-h-[60vh] mb-6 sm:mb-12  sm:py-0">
+        <h1 className="text-xl md:text-2xl font-semibold  md:text-center hidden md:block tracking-wider leading-relaxed mb-4">
           Essential Features for Tenants & Hostel Owners
         </h1>
-        <h1 className="text-xl md:text-2xl font-semibold mb-8 text-center md:hidden">
+        <h1 className="text-xl md:text-2xl font-semibold mb-4 sm:mb-8 text-center md:hidden">
           Essential Features <br /> for Tenants & Hostel Owners
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 py-4">
