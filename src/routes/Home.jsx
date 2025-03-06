@@ -6,7 +6,7 @@ import UserFeedBack from "../components/UserFeedBack";
 import HomeHero from "../components/HomeHero";
 const Home = () => {
   return (
-    <main className="">
+    <main className="mt-20">
       {/*Hero Section*/}
       <HomeHero />
       {/*Section 2 */} 
