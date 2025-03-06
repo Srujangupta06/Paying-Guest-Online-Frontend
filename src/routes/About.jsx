@@ -1,10 +1,7 @@
 const About = () => {
   return (
     <div>
-      <header className="border h-16">
-        <h1 className="text-xl font-semibold text-center">Header</h1>
-      </header>
-      <center className="text-center bg-gray-50 p-10 pt-4">
+      <div className="text-center bg-gray-50 p-10 pt-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-screen md:w-3/6 p-10">
             <img src="https://bookmypg.co.in/assets/front/images/about.png" className="w-full"></img>
@@ -92,7 +89,7 @@ const About = () => {
               <p>Transparency, security, and customer satisfaction.</p>
             </div>
           </div>
-      </center>
+      </div>
     </div>
   );
 };
