@@ -35,8 +35,8 @@ const About = () => {
                 <button className="bg-black text-white w-28 md:w-40 p-2 rounded text-xs md:text-base cursor-pointer hover:shadow-2xl 
                 hover:scale-110 transition duration-500">
                   Learn More</button>
-                <button className="bg-white text-black w-28 md:w-40 p-2 border-2 rounded text-xs md:text-base cursor-pointer hover:shadow-2xl 
-                hover:scale-110 transition duration-500">
+                <button className="bg-white text-black w-28 md:w-40 p-2 border-2 rounded text-xs md:text-base cursor-pointer
+                hover:shadow-2xl hover:scale-110 transition duration-500">
                   Sign Up</button>
               </div>
             </div>
