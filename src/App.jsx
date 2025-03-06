@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { lazy, Suspense } from "react";
 import LoadingUi from "./components/LoadingUi";
+import HostelListing from "./routes/HostelListing";
+import AdminLogin from "./routes/AdminLogin";
 
 {
   /*Lazy loading for the respective routes */
@@ -42,6 +44,26 @@ function App() {
               <>
                 <Header />
                 <ContactUs />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/list-hostels"
+            element={
+              <>
+                <Header />
+                <HostelListing/>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/admin-login"
+            element={
+              <>
+                <Header />
+                <AdminLogin/>
                 <Footer />
               </>
             }

@@ -6,7 +6,7 @@ const Faq = () => {
   const [activeFaqId, setActiveFaqId] = useState("");
 
   return (
-    <section className="px-6 sm:px-0 text-center w-full flex flex-col items-center min-h-[70vh] sm:min-h-[50vh] md:min-h-[70vh]  mb-6 sm:mb-12  sm:py-0">
+    <section className="px-6 sm:px-0 text-center w-full flex flex-col items-center min-h-[50vh] sm:min-h-[50vh] md:min-h-[70vh]  mb-6 sm:mb-12  sm:py-0">
       <h1 className="text-xl  md:text-2xl font-semibold mb-4 tracking-widest">
         FAQs
       </h1>
