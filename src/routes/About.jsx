@@ -11,7 +11,7 @@ const About = () => {
               <h1 className="text-xl lg:text-2xl xl:text-4xl font-extrabold">
               <span className="font-semibold">Trust</span><br/> Your Booking Partner</h1>
               <h1 className="text-sm md:text-base lg:text-xl font-light text-gray-800 mt-5">
-                At <span className="font-semibold text-black">Paying Guest Online,</span> we prioritize trust and convenience, 
+                At <span className="font-semibold text-black">Paying-Guest Online,</span> we prioritize trust and convenience, 
                 making your hostel and PG booking experience seamless and secure. Whether you're a student, working professional, or 
                 traveler, finding the right accommodation can be challenging. That’s why we’ve built a platform that connects you with 
                 verified listings, ensuring transparency and reliability.<br/><br/>
