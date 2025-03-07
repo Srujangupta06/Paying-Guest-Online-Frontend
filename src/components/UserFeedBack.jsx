@@ -38,7 +38,7 @@ const UserFeedBack = () => {
     ],
   };
   return (
-    <section className="px-6 sm:px-0  w-full flex flex-col items-center mb-6 sm:mb-12  sm:py-0">
+    <section className="w-full flex flex-col items-center mb-6 sm:mb-12  sm:py-0 justify-between px-6 sm:px-10 md:px-32 ">
       <h1 className="text-xl md:text-2xl font-semibold text-center tracking-wider leading-relaxed ">
         What Our Customers Say
       </h1>
