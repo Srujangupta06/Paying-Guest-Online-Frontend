@@ -45,11 +45,11 @@ const UserFeedBack = () => {
       {/*Make an API call to get feedback from customers */}
       <div className="w-full overflow-hidden mt-2 md:mt-4">
         <Slider {...customerFeedbackSliderSettings}>
-          <UserFeedBackCard id={1}/>
-          <UserFeedBackCard id={2}/>
-          <UserFeedBackCard id={3}/>
-          <UserFeedBackCard id={4}/>
-          <UserFeedBackCard id={5}/>
+          <UserFeedBackCard id={1} />
+          <UserFeedBackCard id={2} />
+          <UserFeedBackCard id={3} />
+          <UserFeedBackCard id={4} />
+          <UserFeedBackCard id={5} />
         </Slider>
       </div>
     </section>

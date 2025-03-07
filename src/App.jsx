@@ -6,6 +6,7 @@ import LoadingUi from "./components/LoadingUi";
 import HostelListing from "./routes/HostelListing";
 import AdminLogin from "./routes/AdminLogin";
 import UserLogin from "./routes/UserLogin";
+import SpecificHostel from "./routes/SpecificHostel";
 
 {
   /*Lazy loading for the respective routes */
@@ -51,7 +52,7 @@ function App() {
             }
           />
           <Route
-            path="/list-hostels"
+            path="/hostel-listings"
             element={
               <>
                 <Header />
@@ -66,6 +67,16 @@ function App() {
               <>
                 <Header />
                 <AdminLogin />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/hostel/:id"
+            element={
+              <>
+                <Header />
+                <SpecificHostel/>
                 <Footer />
               </>
             }

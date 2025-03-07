@@ -6,7 +6,7 @@ import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 border-t border-gray-600 text-white py-4 mt-auto px-6 sm:px-32 relative top-16">
+    <footer className="bg-gray-800 border-t border-gray-600 text-white py-4  px-6 sm:px-32">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-x-8">
         <div>
           <h2 className="text-xl font-semibold">Paying Guest Office</h2>
