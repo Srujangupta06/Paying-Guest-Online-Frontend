@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const HomeHero = () => {
   const navigate = useNavigate();
   return (
-    <section className="px-6 w-full mb-6 sm:mb-12  sm:py-0 bg-image flex flex-col items-center justify-center">
+    <section className="px-6 w-full mb-6 sm:mb-12 sm:py-0 bg-image flex flex-col items-center justify-center min-h-screen">
       <div className="px-2 sm:px-4 flex flex-col text-center items-center">
         <h1 className="text-xl text-white md:text-3xl font-semibold mb-4 tracking-wider leading-relaxed">
           Find Your Perfect Stay Hassle-Free Bookings!

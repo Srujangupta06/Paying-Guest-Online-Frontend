@@ -5,6 +5,7 @@ import { lazy, Suspense } from "react";
 import LoadingUi from "./components/LoadingUi";
 import HostelListing from "./routes/HostelListing";
 import AdminLogin from "./routes/AdminLogin";
+import UserLogin from "./routes/UserLogin";
 
 {
   /*Lazy loading for the respective routes */
@@ -18,6 +19,7 @@ function App() {
     <>
       <Suspense fallback={<LoadingUi />}>
         <Routes>
+          <Route path="/user-login" element={<UserLogin />} />
           <Route
             path="/"
             element={
@@ -53,7 +55,7 @@ function App() {
             element={
               <>
                 <Header />
-                <HostelListing/>
+                <HostelListing />
                 <Footer />
               </>
             }
@@ -63,7 +65,7 @@ function App() {
             element={
               <>
                 <Header />
-                <AdminLogin/>
+                <AdminLogin />
                 <Footer />
               </>
             }

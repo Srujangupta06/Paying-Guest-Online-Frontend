@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div>
-      <div className="text-center bg-gray-50 p-10 pt-4">
+    <div className="px-6 sm:px-10 md:px-32 bg-gray-50">
+      <div className="text-center p-10 pt-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-screen md:w-3/6 p-10">
             <img src="https://bookmypg.co.in/assets/front/images/about.png" className="w-full"></img>
