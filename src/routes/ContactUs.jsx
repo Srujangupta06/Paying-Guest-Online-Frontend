@@ -102,7 +102,7 @@ const ContactUs = () => {
             type="submit"
             className="w-full bg-green-500 text-white p-3 rounded-lg mt-4 hover:bg-green-600"
           >
-            Send Message
+            Send message
           </button>
         </form>
       </div>
