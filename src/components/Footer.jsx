@@ -38,7 +38,9 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="text-md font-semibold">Contact Us</h3>
+          <Link to="/contact-us" className="text-white-400 hover:underline">
+            Contact Us
+          </Link>
           <p className="mt-2 text-gray-400">
             <Link
               to="https://www.google.com/maps/search/Zolo+Stays+-+KPHB+Hostels,+KPHB,+Hyderabad/"
