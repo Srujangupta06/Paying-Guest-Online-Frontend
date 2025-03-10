@@ -20,7 +20,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex justify-between items-center px-6 py-4 shadow-md bg-white sm:px-10 md:px-32 ">
+    <header className="flex justify-between items-center px-6 py-2 shadow-md bg-white sm:px-10 md:px-32 ">
       {/* Logo */}
       <Link to="/" className="text-2xl font-bold text-gray-800">
         <div className="flex items-center space-x-2">
@@ -66,7 +66,10 @@ export default function Navbar() {
         >
           Login
         </button>
-        <button className="cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700">
+        <button
+          onClick={() => navigate("/admin-login")}
+          className="cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700"
+        >
           Add Listing
         </button>
       </div>
@@ -124,7 +127,10 @@ export default function Navbar() {
           >
             Login
           </button>
-          <button className="w-full sm:w-40 cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700">
+          <button
+            onClick={() => navigate("/admin-login")}
+            className="w-full sm:w-40 cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700"
+          >
             Add Listing
           </button>
         </nav>

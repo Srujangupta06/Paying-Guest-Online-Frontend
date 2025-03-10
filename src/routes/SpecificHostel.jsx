@@ -1,12 +1,25 @@
-import { useParams } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { amentiesList, roomTypesList } from "../utils/utils";
-import { createElement } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const SpecificHostel = () => {
-  const { id } = useParams();
+  const hostelRoomSliderSettings = {
+    dots: false,
+    fade: true,
+    infinite: true,
+    speed: 1200,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    swipeToSlide: false,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    arrows: false,
+    pauseOnHover: true,
+  };
   const onHandleChatNow = () => {
     const mobileNumber = "9381138831";
     const prefilledMessage =
@@ -20,7 +33,7 @@ const SpecificHostel = () => {
     <main className="px-6 sm:px-10 md:px-32 py-8 min-h-screen bg-gray-100">
       <section className="bg-white rounded-md px-4 py-8 mb-8">
         {/*Left Side Section */}
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between gap-y-8">
           <div className="w-full md:w-1/2 flex flex-col justify-between">
             <div>
               <h1 className="font-semibold text-2xl mb-2">
@@ -46,6 +59,12 @@ const SpecificHostel = () => {
                 <FaPhoneAlt className="text-sm text-blue-400" />
                 <p className="font-semibold text-gray-800 text-sm">
                   +91xxxxxxxxxx
+                </p>
+              </div>
+              <div className="flex items-center gap-x-1 mb-3">
+                🙍‍♀️
+                <p className="font-semibold text-red-600 text-md">
+                  Only for Women
                 </p>
               </div>
             </div>
@@ -79,16 +98,37 @@ const SpecificHostel = () => {
           ))}
         </ul>
       </section>
-      <section className="bg-white rounded-md  px-4 py-8 mb-8">
-        <h3 className="font-semibold text-xl mb-4">Available Rooms</h3>
-        <ul className="grid grid-cols-3 gap-4">
+      <section className="bg-white rounded-md px-4 py-8 mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-semibold text-xl">Available Rooms</h3>
+          <div className="flex items-center gap-x-6">
+            <button className="text-sm py-1 border border-gray-300 rounded-full w-12 px-4 flex justify-center cursor-pointer">
+              AC
+            </button>
+            <button className="text-sm py-1 border border-gray-300 rounded-full px-4 flex justify-center cursor-pointer">
+              Available
+            </button>
+            <select className="border border-gray-300 outline-none px-2 py-1 rounded-md text-gray-700 ">
+              <option className="text-gray-600">1 Sharing</option>
+              <option className="text-gray-600">2 Sharing</option>
+              <option className="text-gray-600">3 Sharing</option>
+              <option className="text-gray-600">4 or more Sharing</option>
+            </select>
+          </div>
+        </div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
           {roomTypesList.map((eachRoomInfo) => (
             <li key={eachRoomInfo.id} className="rounded-md shadow-md p-4">
-              <img
-                src={eachRoomInfo.imageUrlList[1]}
-                alt={eachRoomInfo.roomType}
-                className="w-full h-40 object-cover rounded-md"
-              />
+              <Slider {...hostelRoomSliderSettings}>
+                {eachRoomInfo.imageUrlList.map((eachImage, index) => (
+                  <img
+                    src={eachImage}
+                    key={index}
+                    className="w-full h-50 object-cover"
+                  />
+                ))}
+              </Slider>
+
               <div className="mt-4">
                 <div className="flex items-center justify-between">
                   <h3
@@ -100,12 +140,14 @@ const SpecificHostel = () => {
                   >
                     {eachRoomInfo.roomStatus}
                   </h3>
-                  <h3 className="font-semibold text-lg">₹{eachRoomInfo.pricePerMonth}/-</h3>
+                  <h3 className="font-semibold text-lg">
+                    ₹{eachRoomInfo.pricePerMonth}/-
+                  </h3>
                 </div>
                 <p className="text-gray-600 mb-2">{eachRoomInfo.roomType}</p>
                 <button
                   disabled={eachRoomInfo.roomStatus !== "Available"}
-                  className={`text-xs px-4 py-1 rounded-sm ${
+                  className={`text-xs px-4 py-1.5 rounded-sm ${
                     eachRoomInfo.roomStatus === "Available"
                       ? "bg-black text-white cursor-pointer"
                       : "bg-gray-300 text-gray-600 cursor-not-allowed"
@@ -117,6 +159,22 @@ const SpecificHostel = () => {
             </li>
           ))}
         </ul>
+      </section>
+      <section className="bg-white rounded-md px-4 py-8 mb-8 flex flex-col md:flex-row md:justify-between gap-y-6">
+        <div className="w-full md:w-1/3">
+          <h3 className="font-semibold text-xl mb-4">Find Us Here</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700.9248930140526!2d78.39526994633104!3d17.48676834742196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb918df14cb897%3A0x3e5fe4685cd52175!2sKphb%20Temple%20Busstop!5e1!3m2!1sen!2sin!4v1741596668424!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div className="w-full md:w-1/2"> 
+        <h3 className="font-semibold text-xl mb-4">Write a Review</h3>
+          <button className="bg-gray-600 text-white px-4 py-1.5 rounded-sm text-sm cursor-pointer">Review</button>
+        </div>
       </section>
     </main>
   );

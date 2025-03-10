@@ -15,7 +15,7 @@ const HomeHero = () => {
         <div className="text-center">
           <button
             className="bg-white text-black text-sm px-5 py-2 border border-white cursor-pointer mr-4"
-            onClick={() => navigate("/list-hostels", { replace: true })}
+            onClick={() => navigate("/hostel-listings", { replace: true })}
           >
             Find Hostels
           </button>

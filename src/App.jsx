@@ -72,7 +72,7 @@ function App() {
             }
           />
           <Route
-            path="/hostel/:id"
+            path="/hostel-listings/:id"
             element={
               <>
                 <Header />
