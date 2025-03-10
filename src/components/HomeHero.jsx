@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Removed `replace`
 
 const HomeHero = () => {
   const navigate = useNavigate();
@@ -15,13 +15,13 @@ const HomeHero = () => {
         <div className="text-center">
           <button
             className="bg-white text-black text-sm px-5 py-2 border border-white cursor-pointer mr-4"
-            onClick={() => navigate("/list-hostels")}
+            onClick={() => navigate("/list-hostels", { replace: true })}
           >
             Find Hostels
           </button>
           <button
-            className="bg-transparent text-white text-sm px-5 py-2 border border-white  cursor-pointer"
-            onClick={() => navigate("/admin-login")}
+            className="bg-transparent text-white text-sm px-5 py-2 border border-white cursor-pointer"
+            onClick={() => navigate("/admin-login", { replace: true })}
           >
             List Hostel
           </button>
