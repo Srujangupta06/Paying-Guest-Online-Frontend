@@ -3,11 +3,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { lazy, Suspense } from "react";
 import LoadingUi from "./components/LoadingUi";
-import HostelListing from "./routes/HostelListing";
-import AdminLogin from "./routes/AdminLogin";
-import UserLogin from "./routes/UserLogin";
-import SpecificHostel from "./routes/SpecificHostel";
-
 {
   /*Lazy loading for the respective routes */
 }
@@ -15,12 +10,18 @@ const Home = lazy(() => import("./routes/Home"));
 const About = lazy(() => import("./routes/About"));
 const ContactUs = lazy(() => import("./routes/ContactUs"));
 const PageNotFound = lazy(() => import("./routes/PageNotFound"));
+const UserLogin = lazy(() => import("./routes/UserLogin"));
+const SpecificHostel = lazy(() => import("./routes/SpecificHostel"));
+const AdminLogin = lazy(() => import("./routes/AdminLogin"));
+const HostelListing = lazy(() => import("./routes/HostelListing"));
+const UserRegistration = lazy(() => import("./routes/UserRegistration"));
 function App() {
   return (
     <>
       <Suspense fallback={<LoadingUi />}>
         <Routes>
           <Route path="/user-login" element={<UserLogin />} />
+          <Route path="/user-registration" element={<UserRegistration/>} />
           <Route
             path="/"
             element={
@@ -65,9 +66,7 @@ function App() {
             path="/admin-login"
             element={
               <>
-                <Header />
                 <AdminLogin />
-                <Footer />
               </>
             }
           />
@@ -76,7 +75,7 @@ function App() {
             element={
               <>
                 <Header />
-                <SpecificHostel/>
+                <SpecificHostel />
                 <Footer />
               </>
             }

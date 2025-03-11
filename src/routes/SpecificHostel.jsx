@@ -2,11 +2,17 @@ import { MdLocationPin } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 import { amentiesList, roomTypesList } from "../utils/utils";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
+import UserFeedBackCard from "../components/UserFeedBackCard";
+import HostelReviewCard from "../components/HostelReviewCard";
 const SpecificHostel = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAvailable, setIsAvailable] = useState(false);
   const hostelRoomSliderSettings = {
     dots: false,
     fade: true,
@@ -20,6 +26,31 @@ const SpecificHostel = () => {
     arrows: false,
     pauseOnHover: true,
   };
+
+  const modalSettings = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+
+  const hostelReviewSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 1200,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    arrows: false,
+    pauseOnHover: false,
+  };
+
   const onHandleChatNow = () => {
     const mobileNumber = "9381138831";
     const prefilledMessage =
@@ -102,11 +133,13 @@ const SpecificHostel = () => {
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-semibold text-xl">Available Rooms</h3>
           <div className="flex items-center gap-x-6">
-            <button className="text-sm py-1 border border-gray-300 rounded-full w-12 px-4 flex justify-center cursor-pointer">
-              AC
-            </button>
-            <button className="text-sm py-1 border border-gray-300 rounded-full px-4 flex justify-center cursor-pointer">
-              Available
+            <button
+              onClick={() => setIsAvailable(!isAvailable)}
+              className={`items-center gap-x-2 text-sm py-1 border border-gray-300 rounded-full px-4 flex justify-center cursor-pointer ${
+                isAvailable ? "bg-gray-600 text-white" : "bg-white"
+              }`}
+            >
+              Available {isAvailable ? <IoClose /> : ""}
             </button>
             <select className="border border-gray-300 outline-none px-2 py-1 rounded-md text-gray-700 ">
               <option className="text-gray-600">1 Sharing</option>
@@ -171,9 +204,18 @@ const SpecificHostel = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="w-full md:w-1/2"> 
-        <h3 className="font-semibold text-xl mb-4">Write a Review</h3>
-          <button className="bg-gray-600 text-white px-4 py-1.5 rounded-sm text-sm cursor-pointer">Review</button>
+        <div className="w-full md:w-1/2">
+          <h3 className="font-semibold text-xl mb-4">People Say about Us</h3>
+          <div>
+            <Slider {...hostelReviewSliderSettings} className="bg-white">
+              <HostelReviewCard />
+              <HostelReviewCard />
+              <HostelReviewCard />
+              <HostelReviewCard />
+            </Slider>
+          </div>
+          <h3 className="font-semibold text-md mt-4 italic text-gray-600 mb-4">Be the First One to Review</h3>
+          <button className="bg-gray-600 px-4 py-1.5 text-xs text-white rounded-sm cursor-pointer">Review</button>
         </div>
       </section>
     </main>
