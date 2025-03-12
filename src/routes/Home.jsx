@@ -68,7 +68,7 @@ const Home = () => {
                 Find trusted rental listings with seamless payment options.
               </p>
               <Link
-                to="/room-listings"
+                to="/hostel-listings"
                 className="mt-4 inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 transition duration-200"
               >
                 <span className="font-medium text-sm">Join Now</span>
