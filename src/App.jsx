@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { lazy, Suspense } from "react";
 import LoadingUi from "./components/LoadingUi";
+import AdminRegistration from "./routes/AdminRegistration";
 {
   /*Lazy loading for the respective routes */
 }
@@ -264,6 +265,14 @@ function App() {
             element={
               <>
                 <AdminLogin />
+              </>
+            }
+          />
+          <Route
+            path="/admin-registration"
+            element={
+              <>
+                <AdminRegistration />
               </>
             }
           />
