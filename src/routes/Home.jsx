@@ -10,7 +10,7 @@ const Home = () => {
       {/*Hero Section*/}
       <HomeHero />
       {/*Section 2 */} 
-      <section className="px-6 sm:px-0 flex flex-col sm:min-h-[40vh] md:min-h-[80vh] sm:flex-row items-center justify-around w-full mb-6 sm:mb-12  sm:py-0">
+      <section className="flex flex-col sm:min-h-[40vh] md:min-h-[80vh] sm:flex-row items-center justify-between px-6 sm:px-10 md:px-32 w-full mb-6 sm:mb-12  sm:py-0">
         {/*Left Side Section */}
         <div className="sm:w-1/3 w-full mt-6 sm:mt-0 order-2 sm:order-1">
           <img
@@ -45,7 +45,7 @@ const Home = () => {
         </div>
       </section>
       {/*Section 3 */}
-      <section className="px-6 sm:px-0 w-full flex flex-col items-center md:min-h-[60vh] mb-6 sm:mb-12  sm:py-0">
+      <section className="justify-between px-6 sm:px-10 md:px-32 w-full flex flex-col items-center md:min-h-[60vh] mb-6 sm:mb-12  sm:py-0">
         <h1 className="text-xl md:text-2xl font-semibold  md:text-center hidden md:block tracking-wider leading-relaxed mb-4">
           Essential Features for Tenants & Hostel Owners
         </h1>
@@ -68,7 +68,7 @@ const Home = () => {
                 Find trusted rental listings with seamless payment options.
               </p>
               <Link
-                to="/room-listings"
+                to="/hostel-listings"
                 className="mt-4 inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 transition duration-200"
               >
                 <span className="font-medium text-sm">Join Now</span>

@@ -6,11 +6,11 @@ const Faq = () => {
   const [activeFaqId, setActiveFaqId] = useState("");
 
   return (
-    <section className="px-6 sm:px-0 text-center w-full flex flex-col items-center min-h-[50vh] sm:min-h-[50vh] md:min-h-[70vh]  mb-6 sm:mb-12  sm:py-0">
-      <h1 className="text-xl  md:text-2xl font-semibold mb-4 tracking-widest">
+    <section className="px-6 sm:px-10 md:px-32 text-center w-full flex flex-col items-center min-h-[50vh] sm:min-h-[50vh] md:min-h-[70vh]  mb-6 sm:mb-12  sm:py-0">
+      <h1 className="mb-6 text-xl  md:text-2xl font-semibold tracking-widest">
         FAQs
       </h1>
-      <p className="mb-8 text-sm">
+      <p className="text-sm mb-6">
         Find answers to your questions about booking, payments, and our
         services.
       </p>

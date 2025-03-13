@@ -38,18 +38,18 @@ const UserFeedBack = () => {
     ],
   };
   return (
-    <section className="px-6 sm:px-0  w-full flex flex-col items-center mb-6 sm:mb-12  sm:py-0">
+    <section className="w-full flex flex-col items-center mb-6 sm:mb-12  sm:py-0 justify-between px-6 sm:px-10 md:px-32 ">
       <h1 className="text-xl md:text-2xl font-semibold text-center tracking-wider leading-relaxed ">
         What Our Customers Say
       </h1>
       {/*Make an API call to get feedback from customers */}
       <div className="w-full overflow-hidden mt-2 md:mt-4">
         <Slider {...customerFeedbackSliderSettings}>
-          <UserFeedBackCard id={1}/>
-          <UserFeedBackCard id={2}/>
-          <UserFeedBackCard id={3}/>
-          <UserFeedBackCard id={4}/>
-          <UserFeedBackCard id={5}/>
+          <UserFeedBackCard id={1} />
+          <UserFeedBackCard id={2} />
+          <UserFeedBackCard id={3} />
+          <UserFeedBackCard id={4} />
+          <UserFeedBackCard id={5} />
         </Slider>
       </div>
     </section>
