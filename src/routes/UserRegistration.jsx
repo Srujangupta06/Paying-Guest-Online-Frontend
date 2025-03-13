@@ -161,13 +161,13 @@ const UserRegistration = () => {
             >
               Register
             </button>
-            <p className="text-sm font-semibold">
-              Already have an account ?
+            <p className="text-sm font-semibold text-center md:text-left">
+              Already have an account?
               <Link
-                className="text-blue-500 text-sm font-semibold"
+                className="text-blue-500 text-sm font-semibold ml-1"
                 to="/user-login"
               >
-                 Login here.
+                Login here.
               </Link>
             </p>
           </form>
