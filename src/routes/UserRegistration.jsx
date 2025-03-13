@@ -2,6 +2,7 @@ import { FaLock, FaUser, FaCity } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const UserRegistration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +27,7 @@ const UserRegistration = () => {
             Register
           </h2>
 
-          <form className="space-y-6">
+          <form className="space-y-3">
             {/* Name Field */}
             <div>
               <label className="block text-gray-700 font-medium" htmlFor="name">
@@ -46,7 +47,10 @@ const UserRegistration = () => {
 
             {/* Email Field */}
             <div>
-              <label className="block text-gray-700 font-medium" htmlFor="email">
+              <label
+                className="block text-gray-700 font-medium"
+                htmlFor="email"
+              >
                 Email
               </label>
               <div className="flex items-center border rounded-lg py-2 px-4 mt-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
@@ -63,7 +67,10 @@ const UserRegistration = () => {
 
             {/* Contact Field */}
             <div>
-              <label className="block text-gray-700 font-medium" htmlFor="contact">
+              <label
+                className="block text-gray-700 font-medium"
+                htmlFor="contact"
+              >
                 Contact
               </label>
               <div className="flex items-center border rounded-lg py-2 px-4 mt-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
@@ -97,7 +104,10 @@ const UserRegistration = () => {
 
             {/* Gender Field */}
             <div>
-              <label className="block text-gray-700 font-medium" htmlFor="gender">
+              <label
+                className="block text-gray-700 font-medium"
+                htmlFor="gender"
+              >
                 Gender
               </label>
               <div className="flex items-center border rounded-lg py-2 px-4 mt-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
@@ -116,7 +126,10 @@ const UserRegistration = () => {
 
             {/* Password Field */}
             <div>
-              <label className="block text-gray-700 font-medium" htmlFor="password">
+              <label
+                className="block text-gray-700 font-medium"
+                htmlFor="password"
+              >
                 Password
               </label>
               <div className="flex items-center border rounded-lg py-2 px-4 mt-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-400">
@@ -148,6 +161,15 @@ const UserRegistration = () => {
             >
               Register
             </button>
+            <p className="text-sm font-semibold">
+              Already have an account ?
+              <Link
+                className="text-blue-500 text-sm font-semibold"
+                to="/user-login"
+              >
+                 Login here.
+              </Link>
+            </p>
           </form>
         </div>
       </div>

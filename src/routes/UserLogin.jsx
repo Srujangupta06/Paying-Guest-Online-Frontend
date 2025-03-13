@@ -74,16 +74,16 @@ const UserLogin = () => {
               Login
             </button>
             <div className="flex items-center justify-between">
-              <Link
-                className="text-blue-500 text-xs font-semibold"
-                to="/user-registration"
-              >
-                Register Account
-              </Link>
-              <Link
-                className="text-blue-500 text-xs font-semibold"
-                to="/"
-              >
+              <p className="text-sm">
+                Don't have an account ? 
+                 <Link
+                  className="text-blue-500 text-xs font-semibold"
+                  to="/user-registration"
+                >
+                   Register here.
+                </Link>
+              </p>
+              <Link className="text-blue-500 text-xs font-semibold" to="/">
                 Forgot Password
               </Link>
             </div>
