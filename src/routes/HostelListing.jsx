@@ -1,12 +1,13 @@
 import React from "react";
 import HostelSearchBar from "./HostelSearchBar";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HostelListing = ({ pgListings }) => {
   const [filteredPGs, setFilteredPGs] = useState(pgListings);
   const [isVerified, setIsVerified] = useState(false);
   const [selectedPriceRange, setSelectedPriceRange] = useState("All");
-
+  const navigate = useNavigate();
   const handleFilterChange = (type, ac) => {
     let filteredData = pgListings;
 
@@ -96,7 +97,7 @@ const HostelListing = ({ pgListings }) => {
                 </p>
                 <div className="mt-4">
                   <button
-                    onClick={() => (window.location.href = `/details/${pg.id}`)}
+                    onClick={() => navigate(`/hostel-listings/${pg.id}`)}
                     className="w-full px-4 py-2 text-sm sm:text-base bg-gray-500 text-white font-medium rounded-lg transition-all duration-300 hover:bg-gray-700"
                   >
                     View Details

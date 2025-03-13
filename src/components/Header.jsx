@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import { IoAddCircleOutline } from "react-icons/io5";
 export default function Navbar() {
   const navigate = useNavigate();
 
@@ -68,9 +68,10 @@ export default function Navbar() {
         </button>
         <button
           onClick={() => navigate("/admin-login")}
-          className="cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700"
+          className="cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700 flex items-center gap-x-2"
         >
-          Add Hostel
+          <IoAddCircleOutline className="text-[17px]"/>
+          List Hostel
         </button>
       </div>
 
@@ -127,7 +128,7 @@ export default function Navbar() {
           >
             Login
           </button>
-          
+
           <button
             onClick={() => navigate("/admin-login")}
             className="w-full sm:w-40 cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700"
