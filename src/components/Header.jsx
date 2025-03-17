@@ -63,6 +63,7 @@ export default function Navbar() {
       {/* Desktop Buttons (Login & Signup) */}
       <div className="hidden lg:flex flex-row items-center gap-x-4 md:gap-x-6">
         <button
+        onClick={()=>navigate('/user-login')}
           className="cursor-pointer text-xs tracking-widest text-gray-800 border border-gray-800 rounded-sm px-4 md:px-6 py-2 transition duration-300 hover:bg-gray-100"
         >
          Login

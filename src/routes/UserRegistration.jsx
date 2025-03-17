@@ -15,13 +15,13 @@ const UserRegistration = () => {
   const navigate = useNavigate();
   const onHandleFormSubmit = (e) => {
     e.preventDefault();
-    userRegistration();
-    setUserName("");
-    setUserEmail("");
-    setUserGender("Male");
-    setUserCity("");
-    setUserPhone("");
-    setUserPassword("");
+    // userRegistration();
+    // setUserName("");
+    // setUserEmail("");
+    // setUserGender("Male");
+    // setUserCity("");
+    // setUserPhone("");
+    // setUserPassword("");
   };
 
   const userRegistration = async () => {
