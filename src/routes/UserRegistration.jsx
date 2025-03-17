@@ -2,10 +2,58 @@ import { FaLock, FaUser, FaCity } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 const UserRegistration = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userGender, setUserGender] = useState("Male");
+  const [userCity, setUserCity] = useState("");
+  const [userPhone, setUserPhone] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const navigate = useNavigate();
+  const onHandleFormSubmit = (e) => {
+    e.preventDefault();
+    userRegistration();
+    setUserName("");
+    setUserEmail("");
+    setUserGender("Male");
+    setUserCity("");
+    setUserPhone("");
+    setUserPassword("");
+  };
+
+  const userRegistration = async () => {
+    try {
+      const apiUrl = "http://localhost:5000/api/user/registration";
+      const newUser = {
+        name: userName,
+        password: userPassword,
+        email: userEmail,
+        gender: userGender,
+        city: userCity,
+        mobile_number: userPhone,
+      };
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      };
+      const response = await fetch(apiUrl, options);
+
+      if (response.ok) {
+        const data = await response.json();
+        const token = data.jwt_token;
+        Cookies.set("jwtToken", token, { expires: 7 });
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="flex bg-gray-100 items-center justify-center min-h-screen p-4">
@@ -27,7 +75,7 @@ const UserRegistration = () => {
             Register
           </h2>
 
-          <form className="space-y-3">
+          <form className="space-y-3" onSubmit={onHandleFormSubmit}>
             {/* Name Field */}
             <div>
               <label className="block text-gray-700 font-medium" htmlFor="name">
@@ -39,6 +87,8 @@ const UserRegistration = () => {
                   type="text"
                   required
                   id="name"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
                   placeholder="Enter your name"
                   className="w-full outline-none bg-transparent text-gray-700"
                 />
@@ -59,6 +109,8 @@ const UserRegistration = () => {
                   type="email"
                   required
                   id="email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                   placeholder="Enter your email"
                   className="w-full outline-none bg-transparent text-gray-700"
                 />
@@ -79,6 +131,8 @@ const UserRegistration = () => {
                   type="tel"
                   required
                   id="contact"
+                  value={userPhone}
+                  onChange={(e) => setUserPhone(e.target.value)}
                   placeholder="Enter your contact number"
                   className="w-full outline-none bg-transparent text-gray-700"
                 />
@@ -96,6 +150,8 @@ const UserRegistration = () => {
                   type="text"
                   required
                   id="city"
+                  value={userCity}
+                  onChange={(e) => setUserCity(e.target.value)}
                   placeholder="Enter your city"
                   className="w-full outline-none bg-transparent text-gray-700"
                 />
@@ -114,11 +170,15 @@ const UserRegistration = () => {
                 <select
                   id="gender"
                   required
+                  value={userGender}
+                  onChange={(e) => setUserGender(e.target.value)}
                   className="w-full outline-none bg-transparent text-gray-700"
                 >
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
+                  <option value="" disabled>
+                    Select Gender
+                  </option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -137,6 +197,8 @@ const UserRegistration = () => {
                 <input
                   required
                   id="password"
+                  value={userPassword}
+                  onChange={(e) => setUserPassword(e.target.value)}
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className="w-full outline-none bg-transparent text-gray-700"
@@ -167,7 +229,7 @@ const UserRegistration = () => {
                 className="text-blue-500 text-sm font-semibold"
                 to="/user-login"
               >
-                 Login here.
+                Login here.
               </Link>
             </p>
           </form>

@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { IoAddCircleOutline } from "react-icons/io5";
+import Cookies from "js-cookie";
 export default function Navbar() {
   const navigate = useNavigate();
 
@@ -18,6 +19,7 @@ export default function Navbar() {
       menu.classList.toggle("hidden");
     }
   };
+  const token = Cookies.get("jwtToken");
 
   return (
     <header className="flex justify-between items-center px-6 py-2 shadow-md bg-white sm:px-10 md:px-32 ">
@@ -61,16 +63,15 @@ export default function Navbar() {
       {/* Desktop Buttons (Login & Signup) */}
       <div className="hidden lg:flex flex-row items-center gap-x-4 md:gap-x-6">
         <button
-          onClick={toggleLoginModal}
           className="cursor-pointer text-xs tracking-widest text-gray-800 border border-gray-800 rounded-sm px-4 md:px-6 py-2 transition duration-300 hover:bg-gray-100"
         >
-          Login
+         Login
         </button>
         <button
           onClick={() => navigate("/admin-login")}
           className="cursor-pointer text-xs tracking-widest bg-gray-600 text-white rounded-sm px-4 md:px-6 py-2 border border-gray-600 transition duration-300 hover:bg-gray-700 flex items-center gap-x-2"
         >
-          <IoAddCircleOutline className="text-[17px]"/>
+          <IoAddCircleOutline className="text-[17px]" />
           List Hostel
         </button>
       </div>

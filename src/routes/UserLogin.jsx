@@ -1,8 +1,48 @@
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Cookies from "js-cookie";
 const UserLogin = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const navigate = useNavigate();
+  const onHandleFormSubmit = (e) => {
+    e.preventDefault();
+    getUserLogin();
+    setUserEmail("");
+    setUserPassword("");
+  };
+
+  const getUserLogin = async () => {
+    try {
+      const apiUrl = "http://localhost:5000/api/user/login";
+      const userCredentials = {
+        email: userEmail,
+        password: userPassword,
+      };
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userCredentials),
+      };
+      const response = await fetch(apiUrl, options);
+
+      if (response.ok) {
+        const data = await response.json();
+        const token = data.jwt_token;
+        Cookies.set("jwtToken", token, { expires: 7 });
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex bg-gray-100 items-center justify-center min-h-screen p-4">
       {/* Login Container */}
@@ -23,7 +63,7 @@ const UserLogin = () => {
             Login
           </h2>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={onHandleFormSubmit}>
             {/* Username Field */}
             <div>
               <label
@@ -38,6 +78,8 @@ const UserLogin = () => {
                   type="email"
                   required
                   id="email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                   placeholder="Enter your Email"
                   className="w-full outline-none bg-transparent text-gray-700"
                 />
@@ -57,12 +99,23 @@ const UserLogin = () => {
                 <input
                   required
                   id="password"
-                  type={"password"}
+                  value={userPassword}
+                  onChange={(e) => setUserPassword(e.target.value)}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className="w-full outline-none bg-transparent text-gray-700"
                 />
 
-                <IoEyeOffOutline className="text-xl text-gray-700 cursor-pointer" />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {!showPassword ? (
+                    <IoEyeOffOutline className="text-xl text-gray-700 cursor-pointer" />
+                  ) : (
+                    <IoEyeOutline className="text-xl text-gray-700 cursor-pointer" />
+                  )}
+                </button>
               </div>
             </div>
 
@@ -75,12 +128,12 @@ const UserLogin = () => {
             </button>
             <div className="flex items-center justify-between">
               <p className="text-sm">
-                Don't have an account ? 
-                 <Link
+                Don't have an account ?
+                <Link
                   className="text-blue-500 text-xs font-semibold"
                   to="/user-registration"
                 >
-                   Register here.
+                  Register here.
                 </Link>
               </p>
               <Link className="text-blue-500 text-xs font-semibold" to="/">
