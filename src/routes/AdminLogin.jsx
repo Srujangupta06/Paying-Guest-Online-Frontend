@@ -34,6 +34,7 @@ const AdminLogin = () => {
           className="w-full h-64 lg:h-full object-cover"
         />
       </div>
+    
 
       {/* Right Side Login Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center bg-gray-100 px-4 py-10">
