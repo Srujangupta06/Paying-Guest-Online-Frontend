@@ -435,7 +435,7 @@ const HostelSearchBar = ({
           value={selectedType}
           onChange={handleTypeChange}
         >
-          <option value="All">All</option>
+          <option value="Category">Category</option>
           <option value="Boys">Boys</option>
           <option value="Girls">Girls</option>
         </select>
@@ -448,14 +448,7 @@ const HostelSearchBar = ({
           <option value="AC">AC</option>
           <option value="Non-AC">Non-AC</option>
         </select>
-        <button
-          className={`px-2 py-2 rounded-md text-xs font-medium border transition-all ${
-            isVerified ? "bg-blue-600 text-white" : "bg-white text-gray-700"
-          } hover:bg-blue-500 hover:text-white`}
-          onClick={onVerifiedClick}
-        >
-          Verified
-        </button>
+        
         <button
           className="px-2 py-2 bg-white border rounded-md text-gray-700 font-medium hover:bg-blue-500 hover:text-white transition-all"
           onClick={() => setShowFilters(true)}

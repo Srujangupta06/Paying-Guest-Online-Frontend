@@ -4,6 +4,7 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 const UserLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [userEmail, setUserEmail] = useState("");
@@ -12,6 +13,9 @@ const UserLogin = () => {
   const navigate = useNavigate();
   const onHandleFormSubmit = (e) => {
     e.preventDefault();
+    getUserLogin();
+    setUserEmail("");
+    setUserPassword("");
   };
 
   const getUserLogin = async () => {
@@ -34,16 +38,27 @@ const UserLogin = () => {
         const data = await response.json();
         const token = data.jwt_token;
         Cookies.set("jwtToken", token, { expires: 7 });
-        setUserEmail("");
-        setUserPassword("");
+        toast.success("Login Successful", {
+          pauseOnHover: false,
+          autoClose: 3000,
+          position: "bottom-center",
+        });
         navigate("/");
       } else {
         const data = await response.json();
         const { message } = data;
         setErrorMessage(message);
+        toast.error(message, {
+          pauseOnHover: false,
+          autoClose: 5000,
+        });
       }
     } catch (error) {
       console.log(error);
+      toast.error(error, {
+        pauseOnHover: false,
+        autoClose: 5000,
+      });
     }
   };
 
@@ -83,7 +98,10 @@ const UserLogin = () => {
                   required
                   id="email"
                   value={userEmail}
-                  onChange={(e) => setUserEmail(e.target.value)}
+                  onChange={(e) => {
+                    setUserEmail(e.target.value);
+                    setErrorMessage("");
+                  }}
                   placeholder="Enter your Email"
                   className="w-full outline-none bg-transparent text-gray-700"
                 />
@@ -104,7 +122,10 @@ const UserLogin = () => {
                   required
                   id="password"
                   value={userPassword}
-                  onChange={(e) => setUserPassword(e.target.value)}
+                  onChange={(e) => {
+                    setUserPassword(e.target.value);
+                    setErrorMessage("");
+                  }}
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className="w-full outline-none bg-transparent text-gray-700"

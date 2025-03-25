@@ -4,6 +4,7 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 const UserRegistration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [userName, setUserName] = useState("");
@@ -15,13 +16,13 @@ const UserRegistration = () => {
   const navigate = useNavigate();
   const onHandleFormSubmit = (e) => {
     e.preventDefault();
-    // userRegistration();
-    // setUserName("");
-    // setUserEmail("");
-    // setUserGender("Male");
-    // setUserCity("");
-    // setUserPhone("");
-    // setUserPassword("");
+    userRegistration();
+    setUserName("");
+    setUserEmail("");
+    setUserGender("Male");
+    setUserCity("");
+    setUserPhone("");
+    setUserPassword("");
   };
 
   const userRegistration = async () => {
@@ -48,10 +49,19 @@ const UserRegistration = () => {
         const data = await response.json();
         const token = data.jwt_token;
         Cookies.set("jwtToken", token, { expires: 7 });
+        toast.success("Registration Successful", {
+          pauseOnHover: false,
+          autoClose: 3000,
+          position:'bottom-center'
+        });
         navigate("/");
       }
     } catch (error) {
       console.log(error);
+      toast.error("Registration Failed" ,{
+        pauseOnHover: false,
+        autoClose: 5000,
+      });
     }
   };
 

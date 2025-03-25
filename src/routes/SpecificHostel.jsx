@@ -103,7 +103,7 @@ const SpecificHostel = () => {
               className="self-start bg-gray-800 text-white px-5 py-1.5  border border-gray-800 cursor-pointer rounded-sm flex items-center gap-x-2 text-sm"
               onClick={onHandleChatNow}
             >
-              <IoLogoWhatsapp />
+              <IoLogoWhatsapp className="text-lg"/>
               Chat now
             </button>
           </div>
@@ -117,7 +117,7 @@ const SpecificHostel = () => {
           </div>
         </div>
         <hr className="my-6 border-t-1 border-gray-200" />
-        <h3 className="font-semibold text-sm mb-4">Amenties</h3>
+        <h3 className="font-semibold text-md mb-4">Amenties</h3>
         <ul className="px-0 flex flex-wrap gap-y-4">
           {amentiesList.map((eachAmenty) => (
             <li
@@ -141,12 +141,6 @@ const SpecificHostel = () => {
             >
               Available {isAvailable ? <IoClose /> : ""}
             </button>
-            <select className="border border-gray-300 outline-none px-2 py-1 rounded-md text-gray-700 ">
-              <option className="text-gray-600">1 Sharing</option>
-              <option className="text-gray-600">2 Sharing</option>
-              <option className="text-gray-600">3 Sharing</option>
-              <option className="text-gray-600">4 or more Sharing</option>
-            </select>
           </div>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -193,8 +187,8 @@ const SpecificHostel = () => {
           ))}
         </ul>
       </section>
-      <section className="bg-white rounded-md px-4 py-8 mb-8 flex flex-col md:flex-row md:justify-between gap-y-6">
-        <div className="w-full md:w-1/3">
+      <section className="flex flex-col md:flex-row md:justify-between gap-y-6">
+        <div className="w-full md:w-[35%] bg-white rounded-md  px-4 py-8 mb-8 ">
           <h3 className="font-semibold text-xl mb-4">Find Us Here</h3>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700.9248930140526!2d78.39526994633104!3d17.48676834742196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb918df14cb897%3A0x3e5fe4685cd52175!2sKphb%20Temple%20Busstop!5e1!3m2!1sen!2sin!4v1741596668424!5m2!1sen!2sin"
@@ -204,7 +198,7 @@ const SpecificHostel = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-[60%] bg-white rounded-md  px-4 py-8 mb-8 ">
           <h3 className="font-semibold text-xl mb-4">People Say about Us</h3>
           <div>
             <Slider {...hostelReviewSliderSettings} className="bg-white">
